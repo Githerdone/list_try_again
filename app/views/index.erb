@@ -7,12 +7,14 @@
   </form>
 </div>
 
+
+<% if @items %>
 <div class='list_box'>
-<ul id='sortable'>
-  <% if @items %>
-  <% @items.each do |item| %>
-  <li class="ui-state-default"><span class="list"></span><span id='item_id' style='display: none;'><%= item.id %></span><%= item.name %><a href="delete_item/<%= item.id %>">Delete</a></li>
-  <%end%>
-  <%end%>
-</ul>
+  <ul id='sortable'>
+    <% @items.each do |item| %>
+    <li class="ui-state-default"><span class="list"></span><span id='item_id' style='display: none;'><%= item.id %></span><%= item.name %><a href="delete_item/<%= item.id %>">Delete</a></li>
+    <%end%>
+  </ul>
 </div>
+<%end%>
+
